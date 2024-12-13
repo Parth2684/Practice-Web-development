@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Fetch</title>
+</head>
+<body>
+    <script>
+        async function getAnimalData() {
+            const response = await fetch("https://fakerapi.it/api/v1/persons")
+            const finalResponse = await response.json()
+            document.getElementById("data").innerHTML = JSON.stringify(finalResponse);
+        }
+        
+    </script>
+    <button onclick="getAnimalData()">Get Animal Data</button>
+    <div id = "data"> </div>
+</body>
+</html>
