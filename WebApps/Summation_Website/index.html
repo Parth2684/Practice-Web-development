@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Sum Calculator</title>
+</head>
+<body>
+    <input id="firstNumber" type="number" oninput="debouncePopulateDiv()" placeholder="First Number"><br><br>
+    <input id="secondNumber" type="number" oninput="debouncePopulateDiv()" placeholder="First Number"><br><br>
+    <div id="finalSum"></div>
+    <script>
+        let timeout;
+        async function populateDiv(){
+            const a = document.getElementById("firstNumber").value;
+            const b = document.getElementById("secondNumber").value;
+            const response = await fetch("http://localhost:3000/getsum?a=" + a + "&b=" + b);
+            const ans = await response.text();
+            document.getElementById("finalSum").innerText = ans;
+        }
+        function debouncePopulateDiv() {
+            clearTimeout(timeout);
+            timeout = setTimeout(function(){
+                populateDiv()
+            },300);
+        }
+    </script>
+</body>
+</html>

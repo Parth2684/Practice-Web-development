@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Simple Interest Calculator</title>
+</head>
+<body>
+    <input id="principle" type="number" placeholder="Principle"><br><br>
+    <input id="interestRate" type="number" placeholder="Interest Rate"><br><br>
+    <input id="noOfYears" type="number" placeholder="Time in terms of Years "><br><br>
+    <button onclick="populateDiv()">Submit</button>
+    <div id="finalAnswer"></div>
+    <script>
+        async function populateDiv(){
+            const p = document.getElementById("principle").value;
+            const r = document.getElementById("interestRate").value;
+            const n = document.getElementById("noOfYears").value;
+            const response = await fetch("http://localhost:3000/getSimpleInterest?principle=" + p + "&interestRate=" + r + "&noOfYears=" + n);
+            const ans = await response.json();
+            document.getElementById("finalAnswer").innerText = JSON.stringify(ans);
+        }
+    </script>
+</body>
+</html>
