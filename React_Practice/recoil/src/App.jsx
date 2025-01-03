@@ -36,7 +36,7 @@ function EvenCountRenderer() {
   const isEven = useRecoilValue(evenSelector);
 
   return <div>
-    {!isEven ? "It is even" : null}
+    {!isEven ? "It is even" : "It is odd"}
   </div>
 }
 
