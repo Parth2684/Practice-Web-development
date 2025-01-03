@@ -10,4 +10,4 @@ export const evenSelector = selector({
         const count = get(countAtom);
         return count % 2;
     }
-}) 
+})  
