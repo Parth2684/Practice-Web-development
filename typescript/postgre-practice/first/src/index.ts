@@ -4,14 +4,14 @@ dotenv.config();
 
 const DATABASE_URL = process.env.DATABASE_URL;
 const client = new Client({
-    connectionString: process.env.DATABASE_URL
+    connectionString: DATABASE_URL
 })
 
 
-async function createUserTable() {
+async function createUsersTable() {
     await client.connect()
     const result = await client.query(`
-        CREATE TABLE user (
+        CREATE TABLE users (
         id SERIAL PRIMARY KEY,
         username VARCHAR(50) UNIQUE NOT NULL,
         email VARCHAR(255) UNIQUE NOT NULL,
@@ -22,4 +22,4 @@ async function createUserTable() {
     console.log(result)
 }
 
-createUserTable();
+createUsersTable();
