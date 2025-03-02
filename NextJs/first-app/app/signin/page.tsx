@@ -1,10 +1,7 @@
-
+import {Signin as SigninComponent} from "@/components/Signin"
 
 export default function Signin() {
-    return (
-      <div>
-        Signin
-      </div>  
-    );
+    return <div>
+      <SigninComponent />
+    </div>
   }
-  
