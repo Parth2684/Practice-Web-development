@@ -3,3 +3,5 @@ SimpleCourseSellingWebsiteNoAuth/Backend/.env
 SimpleCourseSellingWebsiteWithAuth/Backend/.env
 dist/
 .env
+generated/
+.vscode/
